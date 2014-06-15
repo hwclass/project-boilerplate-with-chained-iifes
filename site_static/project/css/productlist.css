@@ -1,0 +1,9 @@
+.productsWrapper {
+	width : 800px;
+}
+
+.productsWrapper .productContainer{
+	float: left;
+	width: 200px;
+	background-color: #DDDDDD;
+}
