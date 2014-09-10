@@ -1,9 +1,9 @@
-project-boilerplate-with-chained-iifes
+Project Boilerplate with Chained IIFEs
 ======================================
 
 A simple project boilerplate code with chained immediately-invoked function expressions.
 
-###principle usage
+###Principle Usage
 <pre lang="javascript">
 <code>
   (function() {
@@ -14,7 +14,7 @@ A simple project boilerplate code with chained immediately-invoked function expr
 </code>
 </pre>
 
-###practical usage
+###Practical Usage
 <pre lang="javascript">
 <code>
   (function(testFunc) {
