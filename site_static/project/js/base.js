@@ -24,7 +24,7 @@ $(function($, base, undefined) {
 	//utils.log($(el.wrapperAll));
 
 	/*Set The Product Titles*/
-	func.setProductTitle('Product title');
+	func.setProductTitle('>Product Title<');
 
 	/*Get The Product Titles*/
 	utils.log(func.getProductTitle());
@@ -44,20 +44,20 @@ $(function($, base, undefined) {
 	 * Steps :
 	 * a) Sets a namespace object into window. 
 	*/
-	var _Base = _Base || {};
+	var base = base || {};
 
 	/*
 	 * Type : Object
 	 * @no-event
-	 * Context : _Base
+	 * Context : base
 	 * Info: Namespace Object for Config Subclass of Base Main Class for General Configuration
 	 * @no-params
 	 * @no-return
 	 * Steps :
 	 * a) Sets config values into variables and constants within itself. 
 	*/
-	_Base.config = {
-		title : 'Ana Sayfa',
+	base.config = {
+		title : 'Base View',
 		dataLayer : [],
 		auth : $.cookie('is_authenticated'),
 		productSelectedBackColorClass : 'selected',
@@ -67,14 +67,14 @@ $(function($, base, undefined) {
 	/*
 	 * Type : Object
 	 * @no-event
-	 * Context : _Base
+	 * Context : base
 	 * Info: Namespace Object for Element Subclass of Base Main Class for Elements in the Base Page
 	 * @no-params
 	 * @no-return
 	 * Steps :
 	 * a) Sets elements into variables within itself. 
 	*/
-	_Base.el = {
+	base.el = {
 		wrapperAll : document.getElementsByClassName('wrapperall'),
 		wrapper : document.getElementsByClassName('wrapper'),
 		productsWrapper : document.getElementsByClassName('productsWrapper'),
@@ -84,14 +84,14 @@ $(function($, base, undefined) {
 	/*
 	 * Type : Object
 	 * @no-event
-	 * Context : _Base
+	 * Context : base
 	 * Info: Namespace Object for Element Subclass of Base Main Class for Pages within the Project General
 	 * @no-params
 	 * @no-return
 	 * Steps :
 	 * a) Sets pages context within itself. 
 	*/
-	_Base.pages = {
+	base.pages = {
 		ProductList : {},
 		Checkout : {}
 	}
@@ -99,29 +99,29 @@ $(function($, base, undefined) {
 	/*
 	 * Type : Method
 	 * @no-event
-	 * Context : _Base
+	 * Context : base
 	 * Info: Initialization Method for Base Page
 	 * @no-params
 	 * @no-return
 	 * Steps :
 	 * a) Executes code within itself. 
 	*/
-	_Base.init = function() {
+	base.init = function() {
 
 		/*test code*/
-		console.log(_Base.utils.log('project initialized...'));
+		base.utils.log('Project Initialized...');
 		
-		if (_Base.config.auth != "True") {
-		  _Base.config.dataLayer.push({'CV_MDR': $.cookie('duration')});
-		  _Base.config.dataLayer.push({'CV_Gender': $.cookie('gender')});
-		  _Base.config.dataLayer.push({'CV_Purchase': $.cookie('purchase')});
+		if (base.config.auth != "True") {
+		  base.config.dataLayer.push({'CV_MDR': $.cookie('duration')});
+		  base.config.dataLayer.push({'CV_Gender': $.cookie('gender')});
+		  base.config.dataLayer.push({'CV_Purchase': $.cookie('purchase')});
 		}
 
-		/*_Base.el.productContainer.addEventListener('click', )*/
+		/*base.el.productContainer.addEventListener('click', )*/
 
 		/*
-		$(_Base.el.productContainer).click(function (e) {
-			$(this).toggleClass(_Base.config.productSelectedBackColorClass);
+		$(base.el.productContainer).click(function (e) {
+			$(this).toggleClass(base.config.productSelectedBackColorClass);
 		})
 		*/
 		/*test code*/
@@ -131,19 +131,19 @@ $(function($, base, undefined) {
 	/*
 	 * Type : Object
 	 * @no-event
-	 * Context : _Base
+	 * Context : base
 	 * Info: Utils object for Base & Other Pages
 	 * @no-params
 	 * @no-return
 	 * Steps :
-	 * a) Wraps utility methods within _Base. 
+	 * a) Wraps utility methods within base. 
 	*/
-	_Base.utils = {
+	base.utils = {
 
 		/*
 		 * Type : Method
 		 * Event : Anonymous
-		 * Context : _Base.utils
+		 * Context : base.utils
 		 * Info: Logs onto console.
 		 * Params : messages (String)
 		 * @no-return
@@ -159,25 +159,25 @@ $(function($, base, undefined) {
 	/*
 	 * Type : Object
 	 * @no-event
-	 * Context : _Base
+	 * Context : base
 	 * Info: Function collection object for Base Page
 	 * @no-params
 	 * @no-return
 	 * Steps :
-	 * a) Wraps utility methods within _Base. 
+	 * a) Wraps utility methods within base. 
 	*/
-	_Base.fn = {
+	base.fn = {
 
 		setProductTitle : function(title) {
-			_Base.config.productTitle = title;
+			base.config.productTitle = title;
 		},
 
 		getProductTitle : function() {
-			return _Base.config.productTitle;
+			return base.config.productTitle;
 		},
 
 		getProductsNumber : function() {
-			return _Base.el.productContainer.length;
+			return base.el.productContainer.length;
 		}
 
 	}
@@ -193,12 +193,12 @@ $(function($, base, undefined) {
 	 * a) Identifies globals within window. 
 	*/
 	return {
-		config : _Base.config,
-		el : _Base.el,
-		pages : _Base.pages,
-		init : _Base.init,
-		utils : _Base.utils,
-		func : _Base.fn
+		config : base.config,
+		el : base.el,
+		pages : base.pages,
+		init : base.init,
+		utils : base.utils,
+		func : base.fn
 	}
 
 }(jQuery)));

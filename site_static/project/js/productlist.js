@@ -32,7 +32,7 @@ $(function($, base, undefined) {
 	}
 
 	Base.init = function() {
-		console.log(Base.utils.log('project initialized...'));
+		console.log(Base.utils.log('Project Initialized...'));
 	}
 
 	Base.utils = {
