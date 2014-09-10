@@ -17,36 +17,36 @@ $(function($, base, undefined) {
 
 	var ProductList = ProductList || {};
 
-	ProductList._config = {
+	ProductList.config = {
 		title : 'Ana Sayfa'
 	}
 
-	Base._el = {
+	Base.el = {
 		wrapperAll : document.getElementsByClassName('wrapperall'),
 		wrapper : document.getElementsByClassName('wrapper')
 	}
 
-	Base._pages = {
+	Base.pages = {
 		ProductList : {},
 		Checkout : {}
 	}
 
-	Base._init = function() {
-		console.log(Base._utils.log('project initialized...'));
+	Base.init = function() {
+		console.log(Base.utils.log('project initialized...'));
 	}
 
-	Base._utils = {
+	Base.utils = {
 		log : function(message) {
 			console.log(message);
 		}
 	}
 
 	return {
-		config : Base._config,
-		el : Base._el,
-		pages : Base._pages,
-		init : Base._init,
-		utils : Base._utils
+		config : Base.config,
+		el : Base.el,
+		pages : Base.pages,
+		init : Base.init,
+		utils : Base.utils
 	}
 
 }(jQuery)));

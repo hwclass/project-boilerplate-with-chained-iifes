@@ -56,7 +56,7 @@ $(function($, base, undefined) {
 	 * Steps :
 	 * a) Sets config values into variables and constants within itself. 
 	*/
-	_Base._config = {
+	_Base.config = {
 		title : 'Ana Sayfa',
 		dataLayer : [],
 		auth : $.cookie('is_authenticated'),
@@ -74,7 +74,7 @@ $(function($, base, undefined) {
 	 * Steps :
 	 * a) Sets elements into variables within itself. 
 	*/
-	_Base._el = {
+	_Base.el = {
 		wrapperAll : document.getElementsByClassName('wrapperall'),
 		wrapper : document.getElementsByClassName('wrapper'),
 		productsWrapper : document.getElementsByClassName('productsWrapper'),
@@ -91,7 +91,7 @@ $(function($, base, undefined) {
 	 * Steps :
 	 * a) Sets pages context within itself. 
 	*/
-	_Base._pages = {
+	_Base.pages = {
 		ProductList : {},
 		Checkout : {}
 	}
@@ -106,22 +106,22 @@ $(function($, base, undefined) {
 	 * Steps :
 	 * a) Executes code within itself. 
 	*/
-	_Base._init = function() {
+	_Base.init = function() {
 
 		/*test code*/
-		console.log(_Base._utils.log('project initialized...'));
+		console.log(_Base.utils.log('project initialized...'));
 		
-		if (_Base._config.auth != "True") {
-		  _Base._config.dataLayer.push({'CV_MDR': $.cookie('duration')});
-		  _Base._config.dataLayer.push({'CV_Gender': $.cookie('gender')});
-		  _Base._config.dataLayer.push({'CV_Purchase': $.cookie('purchase')});
+		if (_Base.config.auth != "True") {
+		  _Base.config.dataLayer.push({'CV_MDR': $.cookie('duration')});
+		  _Base.config.dataLayer.push({'CV_Gender': $.cookie('gender')});
+		  _Base.config.dataLayer.push({'CV_Purchase': $.cookie('purchase')});
 		}
 
-		/*_Base._el.productContainer.addEventListener('click', )*/
+		/*_Base.el.productContainer.addEventListener('click', )*/
 
 		/*
-		$(_Base._el.productContainer).click(function (e) {
-			$(this).toggleClass(_Base._config.productSelectedBackColorClass);
+		$(_Base.el.productContainer).click(function (e) {
+			$(this).toggleClass(_Base.config.productSelectedBackColorClass);
 		})
 		*/
 		/*test code*/
@@ -138,12 +138,12 @@ $(function($, base, undefined) {
 	 * Steps :
 	 * a) Wraps utility methods within _Base. 
 	*/
-	_Base._utils = {
+	_Base.utils = {
 
 		/*
 		 * Type : Method
 		 * Event : Anonymous
-		 * Context : _Base._utils
+		 * Context : _Base.utils
 		 * Info: Logs onto console.
 		 * Params : messages (String)
 		 * @no-return
@@ -166,18 +166,18 @@ $(function($, base, undefined) {
 	 * Steps :
 	 * a) Wraps utility methods within _Base. 
 	*/
-	_Base._fn = {
+	_Base.fn = {
 
 		setProductTitle : function(title) {
-			_Base._config.productTitle = title;
+			_Base.config.productTitle = title;
 		},
 
 		getProductTitle : function() {
-			return _Base._config.productTitle;
+			return _Base.config.productTitle;
 		},
 
 		getProductsNumber : function() {
-			return _Base._el.productContainer.length;
+			return _Base.el.productContainer.length;
 		}
 
 	}
@@ -193,12 +193,12 @@ $(function($, base, undefined) {
 	 * a) Identifies globals within window. 
 	*/
 	return {
-		config : _Base._config,
-		el : _Base._el,
-		pages : _Base._pages,
-		init : _Base._init,
-		utils : _Base._utils,
-		func : _Base._fn
+		config : _Base.config,
+		el : _Base.el,
+		pages : _Base.pages,
+		init : _Base.init,
+		utils : _Base.utils,
+		func : _Base.fn
 	}
 
 }(jQuery)));
