@@ -15,9 +15,9 @@ $(function($, base, undefined) {
 
 }(jQuery, function($, undefined) {
 
-	var ProductList = ProductList || {};
+	var productList = productList || {};
 
-	ProductList.config = {
+	productList.config = {
 		title : 'Ana Sayfa'
 	}
 
@@ -27,8 +27,8 @@ $(function($, base, undefined) {
 	}
 
 	Base.pages = {
-		ProductList : {},
-		Checkout : {}
+		productList : {},
+		checkout : {}
 	}
 
 	Base.init = function() {
